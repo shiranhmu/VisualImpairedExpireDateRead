@@ -1,0 +1,14 @@
+/venv/
+/__pycache__/
+*.png
+*.jpeg
+*.jpg
+.xml
+.yaml
+__pycache__ 
+.idea 
+venv 
+env 
+.pytest_cache 
+.coverage
+*.h264
