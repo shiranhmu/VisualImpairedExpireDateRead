@@ -13,33 +13,48 @@ The code on Github has five major files:
 1. Main2 - A Python file which is responsible for the scan. After pressing the scan button, gives an audio indication "start scan". The system then searches for the expiration date on the product using the pytesseract package. A search is performed for a date in the dd / mm or dd / mm / yy or dd / mm / yyyy format, which is known in dairy products in Israel. Once the date is identified, the system will refer to the Python file "Functions" which will read the appropriate expiration date.
 2. Functions - A python file containing the functions called from the main program. Functions of image processing, audio playback and date reading.
 3. Buttons - A python file which is responsible for running the main program for scanning the expiration date when the scan button is clicked. Turns off the scan program when pressed again.
-4. Listen-for-Shutdown - A python file which is responsible for turning on the device when pressed and turning it off when pressed again.
-5. Audio files folder- Contains the audio files of the dates and the start of the scan.
-6. Results - A text file containing the scan results of an expiration date that the system has detected. 
+4. Audio files folder- Contains the audio files of the dates and the start of the scan.
 
 
 
 ## Main Packages
 
-**Pytesseract** -- <br>
-Python-tesseract is an optical character recognition (OCR) tool for python. That is, it will recognize and “read” the text embedded in images.
-<br>
-Python-tesseract is a wrapper for Google’s Tesseract-OCR Engine. It is also useful as a stand-alone invocation script to tesseract, as it can read all image types supported by the Pillow and Leptonica imaging libraries, including jpeg, png, gif, bmp, tiff, and others.
-<br>
-The experiments show that a lot of numbers and expiration dates are particularly difficult for off-the-shelf OCR engines, such as Tesseract, to read because they are usually written in a dot-matrix font that varies widely from product to product. For example, Tesseract and the Google Text Detection API achieve a 55% and 60% character accuracy, respectively, on dot matrix fonts.
-<br>
-The time period for implementing the project in machine learning is much larger than what was allowed to us within the project time frame. Therefore, OCR technology is used. The technology has helped us identify numbers and dates by format.
+ 
 
-**CV2** -- <br>
-OpenCV (open source computer vision library) is a library of programming functions aimed primarily at real-time computer vision. Main functions:
-1. Ability to perform various manipulations on images (image processing).
-2. Identify objects in the image.
-3. Traffic tracking.
-4. Identify human indications.
+*Pytesseract* -- <br>
+
+Python-tesseract is an optical character recognition (OCR) tool for python. Python-tesseract is an optical character recognition (OCR) tool for Python. It will recognize the date format and perform a transformation from text embedded in images to digital text.
+
 <br>
+
+Python-tesseract is a wrapper for Google’s Tesseract-OCR Engine. It is also useful as a stand-alone invocation script to tesseract, as it can read all image types supported by the Pillow and Leptonica imaging libraries, including jpeg, png, gif, bmp, tiff, and others.
+
+<br>
+
+The experiments show that a lot of numbers and expiration dates are particularly difficult for off-the-shelf OCR engines, such as Tesseract, to read because they are usually written in a dot-matrix font that varies widely from product to product. For example, Tesseract and the Google Text Detection API achieve a 55% and 60% character accuracy, respectively, on dot matrix fonts.
+
+<br>
+
+The time period for implementing the project in machine learning is much larger than what was allocated to us within the time frame of the project. Therefore, OCR technology is used. Technology has helped us identify numbers and dates by format.
+
+*CV2* -- <br>
+
+OpenCV (open source computer vision library) is a library of programming functions aimed primarily at real-time computer vision. Main functions:
+
+1. Ability to perform various manipulations on images (image processing).
+
+2. Identify objects in the image.
+
+3. Traffic tracking.
+
+4. Identify human indications.
+
+<br>
+
 In this project, this library is mainly used with filters like get_grayscale, bitwise_not, thresholding for image processing for better identification of the expiration date.
 
-**Pygame** -- <br>
+ *Pygame* -- <br>
+
 The pygame library is an open-source module for the Python programming language specifically intended to help make games and other multimedia applications. Built on top of the portable SDL (Simple DirectMedia Layer) development library.This module contains classes for loading Sound objects and controlling playback.
 
 ## HardWare
