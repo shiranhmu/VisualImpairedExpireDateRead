@@ -59,7 +59,7 @@ Applicable battery: 3.7V 14500 lithium battery (4.2V when full charged).
 * **Buttons and pins** --<br>
 1. power button - PIN GPIO3 - SCL1 - 12C + Ground. size 12 mm.
 2. scan button - PIN GPIO17 + Ground. size 20 mm.
-![alt text](https://ibb.co/jysWmYx)
+![alt text](https://i.ibb.co/McQGrHj/PINS.jpg)
 * **Speaker** -- <br>
 A small voice amplifier on a module with a connection to the Grove system of the SeeedStudio company.
 Provides the module with signals at different frequencies and you can play basic sounds and music.
