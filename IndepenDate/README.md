@@ -66,6 +66,9 @@ Provides the module with signals at different frequencies and you can play basic
 * **3D model** -- <br> 
 The model is ergonomically designed to fit the shape of the palm considering that the hand will not obscure the camera viewfinder. The scan button is located parallel to the camera viewfinder so that it gives the user an indication of where the camera is facing. The model has a side opening for connecting the charger.
 1. Sketches: <br>
+![alt text](https://i.ibb.co/Gc2XyZC/image.png)
 
 2. SolidWork: <br>
-
+![alt text](https://i.ibb.co/BCc5RRB/PHOTO-2022-06-10-13-45-01.jpg)
+![alt text](https://i.ibb.co/smZkF0z/PHOTO-2022-06-10-13-45-02.jpg)
+![alt text](https://i.ibb.co/ysH3v08/PHOTO-2022-06-10-13-45-02-1.jpg)
