@@ -3,7 +3,7 @@ import time                      #Import time library
 from subprocess import Popen
 import functions
 
-
+#Welcome audio
 functions.play_audio(True, "/home/pi/Desktop/DateRecords/welcome.mp3")
 
 p = 0
