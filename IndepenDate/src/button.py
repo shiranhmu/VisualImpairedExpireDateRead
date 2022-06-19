@@ -9,13 +9,13 @@ functions.play_audio(True, "/home/pi/Desktop/DateRecords/welcome.mp3")
 p = 0
 GPIO.setmode(GPIO.BOARD)         #Set GPIO pin numbering
 GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_UP) #Enable input and pull up resistors
-while True:
+
+
+while True: 
     input_state = GPIO.input(11) #Read and store value of input to a variable
     if input_state == False:     #Check whether pin is grounded
-       print('Button Pressed')   #Print 'Button Pressed'
        if(not p):
-          p = Popen(['python', '/home/pi/project/IndepanDate/sandbox/main2.py'])
-          print('start proccess')
+          p = Popen(['python', '/home/pi/project/IndepanDate/sandbox/main2.py']) #while button is pressed, scan for a date pattern
        else:
           pass
        time.sleep(0.3)           #Delay of 0.3s
