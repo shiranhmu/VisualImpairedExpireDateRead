@@ -8,15 +8,15 @@ import imutils
 
 
 
-
-cap = cv2.VideoCapture(0)
+#initi camera
+cap = cv2.VideoCapture(0) 
 cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+
 try:
     #start scanning
     first_enter = True
     first_enter = functions.play_audio(first_enter, "/home/pi/Desktop/DateRecords/start_scan.mp3")
     start_time = datetime.now()
-    # degree = 0
     index = 0
 
     while True:
@@ -28,29 +28,14 @@ try:
             picture = functions.get_grayscale(frame)
             picture = cv2.bitwise_not(picture)
             picture = functions.thresholding(picture)
-            #picture = functions.canny(picture)
-            # degree += 5
-            # if degree >= 360:
-            #     degree = 0
-            # skewed = imutils.rotate(picture, 14.74)
-            # picture = deskew(skewed, degree)
 
-
-
+            #'read' digits and store in a dictionary
             d = pytesseract.image_to_data(picture, output_type=Output.DICT)
             Description_pattern_yy = '(\d+/\d+/\d+)'
             Description_pattern_mm ='(3[01]|[12][0-9]|0[1-9])(.|-|\/)(1[0-2]|0[1-9])'
             Description_pattern_dm ='(3[01]|[12][0-9]|[1-9])(.|-|\/)(1[0-2]|[1-9])'
             n_boxes = len(d['text'])
-            # digit accuracy index
-            for j in range(n_boxes):
-                if int(d['conf'][j]) > 60 :
-                    digit_only = pytesseract.image_to_string(picture, config='outputbase digits')
-                    if digit_only != "":
-                        file = open('/home/pi/Desktop/digit_file.txt', "a")
-                        print(f'digits: {digit_only}')
-                        file.write(f'  {start_time} : digits for experiment {digit_only}\n')
-                        file.close()
+
 
             #out algorithm
             for i in range(n_boxes):
@@ -73,12 +58,7 @@ try:
                                 file.close()
                                 break
 
-            # Display the resulting frame
-            # print("test")
-            cv2.imshow('frame', picture)
-
-
-
+            #breakout press
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
         except Exception as e:
