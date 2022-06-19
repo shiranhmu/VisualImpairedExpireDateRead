@@ -16,28 +16,7 @@ def thresholding(image):
     return cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_MEAN_C,\
             cv2.THRESH_BINARY,11,2)
 
-
-# canny edge detection
-def canny(image):
-    return cv2.Canny(image, 100, 200)
-
-
-# skew correction
-def deskew(image, angle):
-    # coords = np.column_stack(np.where(image > 0))
-    # angle = cv2.minAreaRect(coords)[-1]
-    # if angle < -45:
-    #     angle = -(90 + angle)
-    # else:
-    #     angle = -angle
-    (h, w) = image.shape[:2]
-    center = (w // 2, h // 2)
-    M = cv2.getRotationMatrix2D(center, angle, 1.0)
-    rotated = cv2.warpAffine(image, M, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
-    return rotated
-
-
-
+#Day audio
 day_dict = {
     "01": "./audio/1.mp3",
     "1": "./audio/1.mp3",
@@ -81,6 +60,7 @@ day_dict = {
     "31": "./audio/31.mp3"
 }
 
+#Month audio
 month_dict = {
     "01": "./audio/Jan.mp3",
     "1": "./audio/Jan.mp3",
@@ -105,6 +85,7 @@ month_dict = {
     "12": "./audio/Dec.mp3"
 }
 
+#Year audio
 year_dict = {
     "2021": "./audio/2021.mp3",
     "2022": "./audio/2022.mp3",
@@ -125,16 +106,17 @@ def play_audio(flag, path):
         while pygame.mixer.music.get_busy() == True:
          continue
 
-##split by /
+#split date digit by / to array
 def split_date(date):
     date_array = date.split('/')
     return date_array
 
+#reference audio
 def voice_indicator(dictionary, index):
     flag = True
     play_audio(flag, dictionary[index])
 
-
+# sort date digits
 def read_digit_date(detected_date):
     date_array = split_date(detected_date)
     day = date_array[0]
