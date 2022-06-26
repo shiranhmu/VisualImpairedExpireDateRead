@@ -4,7 +4,6 @@ import re
 from pytesseract import Output
 from datetime import datetime
 import functions
-import imutils
 
 
 
