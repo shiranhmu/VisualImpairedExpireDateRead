@@ -2,7 +2,7 @@
 
 
 Technology development project of reading the expiration date of products for the visually impaired. Performed as part of a final project for a degree in Industrial Engineering and Management at Ben Gurion University of the Negev.     
-
+watch how to use on https://youtube.com/shorts/A0soGtdeD8A?feature=share
 ## Introduction
 
 Each food package has its expiration date beyond which it is not recommended consuming it. While most visually impaired people can easily check the expiration date before using the product, for the visually impaired it is very difficult to do so independently, if at all. Visually impaired people can use human assistance to know the expiration date of the product but such assistance is not always available.
